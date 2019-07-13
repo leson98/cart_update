@@ -65,23 +65,7 @@ switch ($action) {
 		include('../view/list_cart.php');
 		# code...
 		break;
-	case 'delete_cart':
-		$product_key = filter_input(INPUT_POST, 'product_key');
-		unset($_SESSION['shop_cart_ph29'][$product_key]);
-		array_values($_SESSION['shop_cart_ph29']);
-		if(isset($_SESSION['shop_cart_ph29']))
-		{
-			$list_cart=$_SESSION['shop_cart_ph29'];
-		}else{
-			$list_cart=array();
-		}
-		$sumtotal=0;
-		foreach ($list_cart as $key => $value) {
-			$sumtotal+=$value['total'];
-		}
-		include('../view/list_cart.php');
-		# code...
-		break;
+	
 	default:
 		# code...
 		break;
